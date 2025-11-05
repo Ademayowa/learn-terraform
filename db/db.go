@@ -1,55 +1,19 @@
 package db
 
 import (
-	"database/sql"
-	"fmt"
-	"os"
+	"context"
 
-	_ "github.com/lib/pq"
+	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 )
 
-var DB *sql.DB
+var DynamoDB *dynamodb.Client
 
 func InitDB() {
-	dbHost := os.Getenv("DB_HOST")
-	dbPort := os.Getenv("DB_PORT")
-	dbUser := os.Getenv("DB_USER")
-	dbPassword := os.Getenv("DB_PASSWORD")
-	dbName := os.Getenv("DB_NAME")
-
-	if dbPort == "" {
-		dbPort = "5432"
-	}
-
-	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
-		dbHost, dbPort, dbUser, dbPassword, dbName)
-
-	var err error
-	DB, err = sql.Open("postgres", connStr)
+	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
-		panic("could not connect to database: " + err.Error())
+		panic("unable to load SDK config, " + err.Error())
 	}
 
-	if err = DB.Ping(); err != nil {
-		panic("could not ping database: " + err.Error())
-	}
-
-	DB.SetMaxOpenConns(10)
-	DB.SetMaxIdleConns(5)
-
-	createTable()
-}
-
-func createTable() {
-	createPropertiesTable := `
-	CREATE TABLE IF NOT EXISTS properties (
-		id TEXT PRIMARY KEY,
-		title TEXT NOT NULL,
-		location TEXT NOT NULL
-	)
-	`
-	_, err := DB.Exec(createPropertiesTable)
-	if err != nil {
-		panic("could not create properties table: " + err.Error())
-	}
+	DynamoDB = dynamodb.NewFromConfig(cfg)
 }

@@ -23,14 +23,3 @@ func CreateProperty(c *gin.Context) {
 
 	c.JSON(http.StatusCreated, gin.H{"message": "property created", "property": property})
 }
-
-// Retrieves all properties
-func GetProperties(c *gin.Context) {
-	properties, err := models.GetAllProperties()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "could not fetch properties"})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"properties": properties})
-}
