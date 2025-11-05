@@ -34,3 +34,24 @@ func (p *Property) Save() error {
 	_, err = db.DynamoDB.PutItem(context.TODO(), input)
 	return err
 }
+
+func GetAllProperties() ([]Property, error) {
+	tableName := os.Getenv("DYNAMODB_TABLE")
+
+	input := &dynamodb.ScanInput{
+		TableName: &tableName,
+	}
+
+	result, err := db.DynamoDB.Scan(context.TODO(), input)
+	if err != nil {
+		return nil, err
+	}
+
+	var properties []Property
+	err = attributevalue.UnmarshalListOfMaps(result.Items, &properties)
+	if err != nil {
+		return nil, err
+	}
+
+	return properties, nil
+}

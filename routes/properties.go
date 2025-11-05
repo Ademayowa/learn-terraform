@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Creates a new property
 func CreateProperty(c *gin.Context) {
 	var property models.Property
 
@@ -22,4 +21,14 @@ func CreateProperty(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, gin.H{"message": "property created", "property": property})
+}
+
+func GetProperties(c *gin.Context) {
+	properties, err := models.GetAllProperties()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "could not fetch properties"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"properties": properties})
 }
