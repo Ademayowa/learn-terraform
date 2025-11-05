@@ -1,0 +1,124 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.toml
+
+# Output of `go build`
+*.out
+*.test
+
+# Build directories
+bin/
+dist/
+
+# Test data
+*.test
+*.prof
+*.cov
+
+# Go dependency directories (vendor)
+vendor/
+
+# Go workspace file (for Go 1.18 and later workspaces)
+go.work
+
+# IDE/editor configurations
+# IntelliJ IDEA
+.idea/
+
+# VS Code
+.vscode/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Emacs
+*~
+\#*\#
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variable files
+.env
+.env.*
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml
+.docker/
+
+# Generated files (Protobuf, etc.)
+*.pb.go
+*.gen.go
+
+# Temporary files and build artifacts
+tmp/
+temp/
+__pycache__/
+*.tmp
+
+# Dependency tools
+/go/pkg/mod/
+
+# API test directory
+/api-test/
+
+# ===============================
+# Terraform files to ignore
+# ===============================
+
+# Terraform directory (contains large provider plugins)
+**/.terraform/*
+**/.terraform/
+
+# Local Terraform state and backup files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform variables (may contain secrets)
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Local override and auto-generated files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock file (optional - some teams commit this)
+.terraform.lock.hcl
+
+# Plan output files
+*.tfplan
+*.tfplan.json
+
+# Deployment packages or zips
+*.zip
+deployment.zip
+
+# Terraform modules directory
+.terraform.modules/
+
+# Terraform plugin cache
+.terraform.tfstate.lock.info
