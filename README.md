@@ -23,8 +23,10 @@ learn-terraform/
 │   ├── routes.go        # Route registration
 │   └── properties.go    # Property handlers
 └── terraform/
-    ├── main.tf          # Infrastructure
-    └── variables.tf     # Variables
+    ├── provider.tf      # AWS provider configuration
+    ├── main.tf          # Infrastructure resources
+    ├── variables.tf     # Input variables
+    └── outputs.tf       # Output values
 ```
 
 ## Setup
