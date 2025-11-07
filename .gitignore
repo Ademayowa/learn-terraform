@@ -106,9 +106,6 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Terraform lock file (optional - some teams commit this)
-.terraform.lock.hcl
-
 # Plan output files
 *.tfplan
 *.tfplan.json
