@@ -60,16 +60,7 @@ chmod +x build.sh
 ./build.sh
 ```
 
-### 4. Setup Terraform
-
-Run this ONCE to create S3 bucket and DynamoDB table for state management.
-
-```bash
-cd terraform/state-setup
-terraform init && terraform apply
-```
-
-### 5. Deploy Infrastructure on dev
+### 3. Deploy Infrastructure on dev
 
 ```bash
 cd terraform/envs/dev

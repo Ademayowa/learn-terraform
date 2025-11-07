@@ -122,3 +122,7 @@ deployment.zip
 
 # Terraform plugin cache
 .terraform.tfstate.lock.info
+
+# But keep state-setup state tracked
+!terraform/state-setup/terraform.tfstate
+!terraform/state-setup/terraform.tfstate.backup
