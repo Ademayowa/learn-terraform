@@ -81,8 +81,6 @@ Terraform state across all environments.
 **DO NOT RUN:** `terraform destroy` (will break all environments)
 **IF DELETED:** All dev/prod state files will be lost
 
-Copy the API endpoint from the output.
-
 ## API Endpoints
 
 **Base URL**: `https://YOUR-API-ID.execute-api.us-east-1.amazonaws.com`
@@ -97,6 +95,8 @@ curl -X POST https://YOUR-API-ID.execute-api.us-east-1.amazonaws.com/properties 
     "location": "Miami, FL"
   }'
 ```
+
+Copy the API endpoint from the output.
 
 ### Get All Properties
 
