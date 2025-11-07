@@ -68,6 +68,19 @@ terraform init
 terraform apply
 ```
 
+# terraform/state-setup/README.md
+
+⚠️ **WARNING: DO NOT DESTROY THIS INFRASTRUCTURE** ⚠️
+
+This folder creates the S3 bucket and DynamoDB table for storing
+Terraform state across all environments.
+
+**Already created:** ✅ S3 bucket: `learn-terraform-state-files`
+**Already created:** ✅ DynamoDB table: `terraform-state-lock`
+
+**DO NOT RUN:** `terraform destroy` (will break all environments)
+**IF DELETED:** All dev/prod state files will be lost
+
 Copy the API endpoint from the output.
 
 ## API Endpoints
