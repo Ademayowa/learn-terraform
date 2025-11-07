@@ -68,7 +68,7 @@ terraform init
 terraform apply
 ```
 
-# terraform/state-setup/README.md
+## terraform/state-setup
 
 ⚠️ **WARNING: DO NOT DESTROY THIS INFRASTRUCTURE** ⚠️
 
