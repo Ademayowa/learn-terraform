@@ -50,12 +50,12 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
 
 # Lambda Function
 resource "aws_lambda_function" "api" {
-  filename         = "${path.module}/../build/lambda.zip"
+  filename         = "${path.module}/../../../build/lambda.zip"
   function_name    = "${var.project_name}-api"
   role             = aws_iam_role.lambda_role.arn
   handler          = "bootstrap"
   runtime          = "provided.al2023"
-  source_code_hash = filebase64sha256("${path.module}/../build/lambda.zip")
+  source_code_hash = filebase64sha256("${path.module}/../../../build/lambda.zip")
 
   environment {
     variables = {

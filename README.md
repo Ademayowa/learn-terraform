@@ -12,21 +12,37 @@ A serverless API built with Go, AWS Lambda, API Gateway, and DynamoDB deployed u
 
 ```
 learn-terraform/
-├── build.sh              # Build script
-├── lambda/
-│   └── main.go          # Lambda handler
+├── api-test/
+├── build/
+│   └── lambda.zip
 ├── db/
-│   └── db.go            # DynamoDB client
+├── lambda/
 ├── models/
-│   └── property.go      # Property model
 ├── routes/
-│   ├── routes.go        # Route registration
-│   └── properties.go    # Property handlers
-└── terraform/
-    ├── provider.tf      # AWS provider configuration
-    ├── main.tf          # Infrastructure resources
-    ├── variables.tf     # Input variables
-    └── outputs.tf       # Output values
+├── terraform/
+│   ├── envs/
+│   │   ├── dev/
+│   │   │   ├── backend.tf
+│   │   │   ├── main.tf
+│   │   │   ├── outputs.tf
+│   │   │   ├── provider.tf
+│   │   │   ├── terraform.tfvars
+│   │   │   └── variables.tf
+│   │   └── prod/
+│   │       ├── backend.tf
+│   │       ├── main.tf
+│   │       ├── outputs.tf
+│   │       ├── provider.tf
+│   │       ├── terraform.tfvars
+│   │       └── variables.tf
+│   └── state-setup/
+│       └── main.tf
+├── .gitignore
+├── build.sh
+├── go.mod
+├── go.sum
+├── makefile
+└── README.md
 ```
 
 ## Setup
