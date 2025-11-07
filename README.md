@@ -60,10 +60,19 @@ chmod +x build.sh
 ./build.sh
 ```
 
-### 3. Deploy Infrastructure
+### 4. Setup Terraform
+
+Run this ONCE to create S3 bucket and DynamoDB table for state management.
 
 ```bash
-cd terraform
+cd terraform/state-setup
+run terraform init && terraform apply
+```
+
+### 5. Deploy Infrastructure on dev
+
+```bash
+cd terraform/envs/dev
 terraform init
 terraform apply
 ```
@@ -93,11 +102,11 @@ curl https://YOUR-API-ID.execute-api.us-east-1.amazonaws.com/properties
 
 ## Development
 
-After making code changes:
+After making code changes on dev:
 
 ```bash
 ./build.sh
-cd terraform
+cd terraform/envs/dev
 terraform apply
 ```
 
