@@ -66,7 +66,7 @@ Run this ONCE to create S3 bucket and DynamoDB table for state management.
 
 ```bash
 cd terraform/state-setup
-run terraform init && terraform apply
+terraform init && terraform apply
 ```
 
 ### 5. Deploy Infrastructure on dev
