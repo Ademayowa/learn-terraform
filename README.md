@@ -12,6 +12,7 @@ A serverless API built with Go, AWS Lambda, API Gateway, and DynamoDB deployed u
 
 ```
 learn-terraform/
+├── .github/workflows/
 ├── api-test/
 ├── build/
 │   └── lambda.zip
