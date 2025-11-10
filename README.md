@@ -16,7 +16,7 @@ learn-terraform/
 ├── build/
 │   └── lambda.zip
 ├── db/
-├── lambda/
+├── cmd/lambda/
 ├── models/
 ├── routes/
 ├── terraform/
