@@ -15,7 +15,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: "1.23"
 
       - name: Run Tests
         run: go test ./tests/... -v -cover
@@ -28,14 +28,15 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: "1.23"
 
       - name: golangci-lint
-  uses: golangci/golangci-lint-action@v4
-  with:
-    version: v1.55.2
+        uses: golangci/golangci-lint-action@v4
+        with:
+          version: v1.55.2
 
   terraform:
+    needs: [test, lint]
     runs-on: ubuntu-latest
     strategy:
       matrix:
