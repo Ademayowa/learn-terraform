@@ -37,6 +37,8 @@ learn-terraform/
 │   │       └── variables.tf
 │   └── state-setup/
 │       └── main.tf
+├── tests/
+│   └── properties_test.go
 ├── .gitignore
 ├── build.sh
 ├── go.mod
