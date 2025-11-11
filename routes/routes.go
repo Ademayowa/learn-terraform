@@ -8,4 +8,7 @@ func RegisterRoutes(router *gin.Engine) {
 	// Define routes
 	router.POST("/properties", CreateProperty)
 	router.GET("/properties", GetProperties)
+
+	// Health check
+	router.GET("/health", HealthCheck)
 }

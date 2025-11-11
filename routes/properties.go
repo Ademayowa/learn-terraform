@@ -32,3 +32,9 @@ func GetProperties(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"properties": properties})
 }
+
+func HealthCheck(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"status": "ok",
+	})
+}
