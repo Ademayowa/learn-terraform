@@ -120,7 +120,7 @@ terraform apply
 ## Cleanup
 
 ```bash
-cd terraform
+cd terraform/envs/dev
 terraform destroy
 ```
 
