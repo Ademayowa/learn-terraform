@@ -125,8 +125,8 @@ terraform destroy
 
 ## Tech Stack
 
-- **Runtime**: Go with AWS Lambda
+- **Backend**: Go with AWS Lambda
 - **Database**: DynamoDB
-- **API Gateway**: AWS HTTP API
+- **Monitoring**: AWS Cloudwatch
 - **Infrastructure**: Terraform
 - **Framework**: Gin
