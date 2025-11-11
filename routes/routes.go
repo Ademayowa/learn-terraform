@@ -10,7 +10,7 @@ func RegisterRoutes(router *gin.Engine) {
 	router.GET("/properties", GetProperties)
 	router.HEAD("/properties", GetProperties)
 
-	// Health check
+	// Health checks
 	router.GET("/health", HealthCheck)
 	router.HEAD("/health", HealthCheck)
 }
